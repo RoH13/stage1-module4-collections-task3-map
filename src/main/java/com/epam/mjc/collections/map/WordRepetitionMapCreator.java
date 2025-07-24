@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WordRepetitionMapCreator {
-    public Map<String, Integer> createWordRepetitionMap(String sentence) {
+    public static Map<String, Integer> createWordRepetitionMap(String sentence) {
         String[] arr = sentence.toLowerCase().replace(",", "").replace(".","").split(" ");
         Map<String, Integer> m = new HashMap<String,Integer>();
         for (String s : arr) {
-            if (m.containsKey(m)) {
+            if (m.containsKey(s)) {
                 m.put(s, m.get(s) + 1);
             } else {
                 m.put(s, 1);
@@ -16,6 +16,9 @@ public class WordRepetitionMapCreator {
         }
         return m;
 
+    }
+    public static void main(String[] args) {
+        System.out.println(createWordRepetitionMap("sentense in loWER caSE, SENTENCE IN UPper CAse."));
     }
     
 }
