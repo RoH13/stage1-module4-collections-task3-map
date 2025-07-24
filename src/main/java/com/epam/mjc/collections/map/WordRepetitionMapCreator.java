@@ -8,7 +8,11 @@ public class WordRepetitionMapCreator {
         String[] arr = sentence.toLowerCase().replace(",", "").replace(".","").split(" ");
         Map<String, Integer> m = new HashMap<String,Integer>();
         for (String s : arr) {
-            m.put(s, m.getOrDefault(s, 0) + 1);
+            if (m.containsKey(m)) {
+                m.put(s, m.get(s) + 1);
+            } else {
+                m.put(s, 1);
+            }
         }
         return m;
 
